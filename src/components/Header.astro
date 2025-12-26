@@ -1,0 +1,31 @@
+---
+import DisclosureBanner from './DisclosureBanner.astro';
+---
+
+<DisclosureBanner />
+
+<header class="sticky top-0 z-40 bg-white/95 backdrop-blur-sm border-b border-gray-100">
+  <nav class="max-w-4xl mx-auto px-4 py-4">
+    <div class="flex items-center justify-between">
+      <!-- Logo/Site Name -->
+      <a href="/" class="text-xl font-bold text-brand-dark">
+        The Stack Lab
+      </a>
+
+      <!-- Fake Navigation (anchor links) -->
+      <ul class="hidden md:flex items-center gap-6 text-sm">
+        <li><a href="#home" class="hover:text-brand-primary transition-colors">Home</a></li>
+        <li><a href="#about" class="hover:text-brand-primary transition-colors">About</a></li>
+        <li><a href="#reviews" class="hover:text-brand-primary transition-colors">Reviews</a></li>
+        <li><a href="#contact" class="hover:text-brand-primary transition-colors">Contact</a></li>
+      </ul>
+
+      <!-- Mobile menu button -->
+      <button class="md:hidden p-2" aria-label="Menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+  </nav>
+</header>

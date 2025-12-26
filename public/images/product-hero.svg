@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450">
+  <rect width="800" height="450" fill="#092326"/>
+  <rect x="50" y="50" width="700" height="350" rx="20" fill="#16B4F2" opacity="0.15"/>
+  <circle cx="400" cy="180" r="50" fill="#16B4F2" opacity="0.4"/>
+  <polygon points="400,140 435,195 365,195" fill="#F2913D"/>
+  <rect x="375" y="195" width="50" height="35" fill="#F2913D"/>
+  <text x="400" y="300" font-family="system-ui, sans-serif" font-size="22" fill="#2ECEF2" text-anchor="middle" font-weight="600">Product Image</text>
+  <text x="400" y="330" font-family="system-ui, sans-serif" font-size="14" fill="#ffffff" opacity="0.5" text-anchor="middle">Replace with 800x450 WebP</text>
+</svg>

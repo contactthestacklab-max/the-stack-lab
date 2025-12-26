@@ -1,0 +1,47 @@
+---
+import { AFFILIATE_LINKS } from '../utils/constants';
+
+interface Props {
+  text?: string;
+  href?: string;
+  size?: 'default' | 'large';
+  fullWidth?: boolean;
+  trackingId?: string;
+}
+
+const {
+  text = 'Get Started Now',
+  href = AFFILIATE_LINKS.mainProduct,
+  size = 'default',
+  fullWidth = false,
+  trackingId = 'main-cta',
+} = Astro.props;
+
+const sizeClasses = {
+  default: 'px-6 py-3 text-base',
+  large: 'px-8 py-4 text-lg',
+};
+---
+
+<a
+  href={href}
+  rel="sponsored nofollow"
+  target="_blank"
+  data-tracking={trackingId}
+  class:list={[
+    'inline-flex items-center justify-center',
+    'bg-brand-cta text-white font-semibold',
+    'rounded-lg shadow-lg',
+    'hover:bg-brand-cta/90 hover:shadow-xl',
+    'active:transform active:scale-[0.98]',
+    'transition-all duration-200',
+    'min-h-[48px]',
+    sizeClasses[size],
+    fullWidth && 'w-full',
+  ]}
+>
+  {text}
+  <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+  </svg>
+</a>

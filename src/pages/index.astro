@@ -1,0 +1,202 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AuthorByline from '../components/AuthorByline.astro';
+import CTAButton from '../components/CTAButton.astro';
+import TestimonialCard from '../components/TestimonialCard.astro';
+import ComparisonTable from '../components/ComparisonTable.astro';
+
+const comparisonData = [
+  { feature: 'Fast Results', product: true, competitors: false },
+  { feature: 'Money-Back Guarantee', product: true, competitors: false },
+  { feature: 'Natural Ingredients', product: true, competitors: '50%' },
+  { feature: 'Free Shipping', product: true, competitors: false },
+  { feature: 'Customer Support', product: '24/7', competitors: 'Limited' },
+];
+---
+
+<BaseLayout
+  title="I Finally Found the Secret to [Desired Outcome] | The Stack Lab"
+  description="Discover how this product helped me solve my biggest challenge. Real experience, honest review."
+>
+  <article class="max-w-3xl mx-auto px-4 py-8" id="home">
+
+    <!-- Hero Section -->
+    <section class="mb-12">
+      <!-- H1 - Must match Pinterest Pin hook (Scent Match) -->
+      <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-brand-dark mb-6 leading-tight">
+        I Finally Found the Secret to [Desired Outcome] After Trying Everything
+      </h1>
+
+      <AuthorByline />
+
+      <!-- Hero Image - WebP, optimized for LCP -->
+      <div class="my-8">
+        <img
+          src="/images/product-hero.svg"
+          alt="The solution I discovered"
+          width="800"
+          height="450"
+          class="w-full rounded-xl shadow-lg bg-gray-200"
+          loading="eager"
+          fetchpriority="high"
+        />
+      </div>
+    </section>
+
+    <!-- PROBLEM Section (P in PAS) -->
+    <section class="mb-12 prose prose-lg max-w-none" id="about">
+      <h2 class="text-2xl font-bold text-brand-dark">
+        My Struggle with [Problem] Was Real...
+      </h2>
+
+      <p>
+        Like many of you, I spent years dealing with [problem]. Every morning,
+        I would [describe pain point]. I tried [failed solution 1], [failed solution 2],
+        and even [failed solution 3]. Nothing seemed to work.
+      </p>
+
+      <p>
+        My friends would give me advice that never helped. I felt frustrated,
+        overwhelmed, and honestly? A little hopeless. I was spending money on
+        products that promised the world but delivered nothing.
+      </p>
+    </section>
+
+    <!-- AGITATION Section (A in PAS) -->
+    <section class="mb-12 bg-gray-50 rounded-xl p-6 md:p-8">
+      <h2 class="text-2xl font-bold text-brand-dark mb-4">
+        The Hidden Cost of [Problem]
+      </h2>
+
+      <p class="text-lg mb-4">
+        Here's what nobody tells you about living with [problem]:
+      </p>
+
+      <ul class="space-y-3">
+        <li class="flex items-start gap-3">
+          <span class="text-brand-alert text-xl flex-shrink-0">&#10007;</span>
+          <span>[Pain point 1 - emotional or financial impact]</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-brand-alert text-xl flex-shrink-0">&#10007;</span>
+          <span>[Pain point 2 - social or relationship impact]</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-brand-alert text-xl flex-shrink-0">&#10007;</span>
+          <span>[Pain point 3 - health or time impact]</span>
+        </li>
+      </ul>
+
+      <p class="mt-4 font-medium text-brand-dark">
+        I knew I needed to find a real solution. That's when everything changed.
+      </p>
+    </section>
+
+    <!-- SOLUTION Section (S in PAS) -->
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold text-brand-dark mb-6">
+        The Discovery That Changed Everything
+      </h2>
+
+      <p class="text-lg mb-6">
+        After months of research, I stumbled upon [Product Name]. At first,
+        I was skeptical (I'd been burned before). But the reviews were different.
+        Real people sharing real results.
+      </p>
+
+      <div class="bg-gradient-to-r from-brand-primary/10 to-brand-secondary/10 rounded-xl p-6 md:p-8 mb-8">
+        <h3 class="text-xl font-bold text-brand-dark mb-4">
+          What Makes [Product] Different:
+        </h3>
+        <ul class="space-y-3">
+          <li class="flex items-start gap-3">
+            <span class="text-brand-primary text-xl flex-shrink-0">&#10003;</span>
+            <span><strong>[Benefit 1]:</strong> [Explanation of benefit]</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-brand-primary text-xl flex-shrink-0">&#10003;</span>
+            <span><strong>[Benefit 2]:</strong> [Explanation of benefit]</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-brand-primary text-xl flex-shrink-0">&#10003;</span>
+            <span><strong>[Benefit 3]:</strong> [Explanation of benefit]</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Primary CTA -->
+      <div class="text-center my-8">
+        <CTAButton
+          text="See If [Product] Is Right For You"
+          size="large"
+          trackingId="solution-section-cta"
+        />
+        <p class="text-sm text-gray-500 mt-3">
+          Limited time offer - Free shipping on orders today
+        </p>
+      </div>
+    </section>
+
+    <!-- SOCIAL PROOF Section -->
+    <section class="mb-12" id="reviews">
+      <h2 class="text-2xl font-bold text-brand-dark mb-6 text-center">
+        What Others Are Saying
+      </h2>
+
+      <div class="grid md:grid-cols-2 gap-6 mb-8">
+        <TestimonialCard
+          name="Sarah M."
+          rating={5}
+          text="I was skeptical at first, but after 2 weeks I noticed a real difference. This actually works!"
+          verified={true}
+        />
+        <TestimonialCard
+          name="Michael R."
+          rating={5}
+          text="Finally something that delivers on its promises. I've already recommended it to my friends."
+          verified={true}
+        />
+        <TestimonialCard
+          name="Jennifer K."
+          rating={4}
+          text="Great product! The results took about 3 weeks for me, but definitely worth the wait."
+          verified={true}
+        />
+        <TestimonialCard
+          name="David L."
+          rating={5}
+          text="Customer service was amazing when I had questions. The product exceeded my expectations."
+          verified={true}
+        />
+      </div>
+
+      <!-- Comparison Table -->
+      <h3 class="text-xl font-bold text-brand-dark mb-4">
+        How [Product] Compares
+      </h3>
+      <ComparisonTable
+        productName="[Product Name]"
+        items={comparisonData}
+      />
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="bg-brand-dark text-white rounded-xl p-8 text-center mb-12">
+      <h2 class="text-2xl md:text-3xl font-bold mb-4">
+        Ready to [Achieve Desired Outcome]?
+      </h2>
+      <p class="text-lg mb-6 text-gray-200">
+        Join thousands of others who have already transformed their [area of life].
+      </p>
+      <CTAButton
+        text="Get Started Today"
+        size="large"
+        trackingId="final-cta"
+      />
+      <p class="text-sm text-gray-400 mt-4">
+        30-day money-back guarantee - No questions asked
+      </p>
+    </section>
+
+  </article>
+</BaseLayout>

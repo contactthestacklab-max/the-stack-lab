@@ -1,0 +1,44 @@
+---
+interface ComparisonItem {
+  feature: string;
+  product: boolean | string;
+  competitors: boolean | string;
+}
+
+interface Props {
+  productName: string;
+  items: ComparisonItem[];
+}
+
+const { productName, items } = Astro.props;
+
+const renderCell = (value: boolean | string): string => {
+  if (typeof value === 'boolean') {
+    return value
+      ? '<span class="text-green-500 text-xl">&#10003;</span>'
+      : '<span class="text-red-500 text-xl">&#10007;</span>';
+  }
+  return value;
+};
+---
+
+<div class="overflow-x-auto">
+  <table class="w-full border-collapse">
+    <thead>
+      <tr class="bg-brand-dark text-white">
+        <th class="text-left p-4 font-semibold">Feature</th>
+        <th class="text-center p-4 font-semibold bg-brand-primary">{productName}</th>
+        <th class="text-center p-4 font-semibold">Others</th>
+      </tr>
+    </thead>
+    <tbody>
+      {items.map((item, index) => (
+        <tr class:list={[index % 2 === 0 ? 'bg-gray-50' : 'bg-white']}>
+          <td class="p-4 text-brand-dark">{item.feature}</td>
+          <td class="p-4 text-center" set:html={renderCell(item.product)}></td>
+          <td class="p-4 text-center" set:html={renderCell(item.competitors)}></td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>

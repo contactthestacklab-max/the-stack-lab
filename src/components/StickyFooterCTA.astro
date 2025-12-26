@@ -1,0 +1,18 @@
+---
+import CTAButton from './CTAButton.astro';
+---
+
+<!-- Mobile-only sticky footer CTA -->
+<div class="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-gray-200 shadow-[0_-4px_20px_rgba(0,0,0,0.1)]">
+  <div class="p-3 pb-[max(0.75rem,env(safe-area-inset-bottom))]">
+    <CTAButton
+      text="Claim Your Discount"
+      size="large"
+      fullWidth={true}
+      trackingId="sticky-footer-cta"
+    />
+  </div>
+</div>
+
+<!-- Spacer to prevent content from being hidden behind sticky footer -->
+<div class="md:hidden h-20" aria-hidden="true"></div>

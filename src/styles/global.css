@@ -1,0 +1,30 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+/* Brand Design Tokens from CLAUDE.md */
+@theme {
+  /* Colors */
+  --color-brand-primary: #16B4F2;
+  --color-brand-secondary: #2ECEF2;
+  --color-brand-dark: #092326;
+  --color-brand-cta: #F2913D;
+  --color-brand-alert: #F25757;
+
+  /* Typography */
+  --font-family-sans: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* Base styles */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-family-sans);
+    font-size: 1.125rem;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
