@@ -1,0 +1,194 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import AuthorByline from '../components/AuthorByline.astro';
+import CTAButton from '../components/CTAButton.astro';
+import TestimonialCard from '../components/TestimonialCard.astro';
+import ComparisonTable from '../components/ComparisonTable.astro';
+
+interface Testimonial {
+  name: string;
+  rating: number;
+  text: string;
+}
+
+interface ComparisonItem {
+  feature: string;
+  product: boolean | string;
+  competitors: boolean | string;
+}
+
+interface Props {
+  // SEO
+  title: string;
+  description: string;
+
+  // Hero
+  headline: string;
+  heroImage?: string;
+
+  // Product Info
+  productName: string;
+  affiliateLink: string;
+
+  // PAS Content
+  problemTitle: string;
+  problemText: string;
+  agitationTitle: string;
+  painPoints: string[];
+  solutionTitle: string;
+  solutionText: string;
+  benefits: { title: string; description: string }[];
+
+  // Social Proof
+  testimonials: Testimonial[];
+  comparisonItems: ComparisonItem[];
+
+  // CTA
+  ctaText?: string;
+  finalCtaTitle: string;
+  finalCtaText: string;
+}
+
+const {
+  title,
+  description,
+  headline,
+  heroImage = '/images/product-hero.svg',
+  productName,
+  affiliateLink,
+  problemTitle,
+  problemText,
+  agitationTitle,
+  painPoints,
+  solutionTitle,
+  solutionText,
+  benefits,
+  testimonials,
+  comparisonItems,
+  ctaText = 'Découvrir Maintenant',
+  finalCtaTitle,
+  finalCtaText,
+} = Astro.props;
+---
+
+<BaseLayout title={title} description={description}>
+  <article class="max-w-3xl mx-auto px-4 py-8" id="home">
+
+    <!-- Hero Section -->
+    <section class="mb-12">
+      <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-brand-dark mb-6 leading-tight">
+        {headline}
+      </h1>
+
+      <AuthorByline />
+
+      <div class="my-8">
+        <img
+          src={heroImage}
+          alt={productName}
+          width="800"
+          height="450"
+          class="w-full rounded-xl shadow-lg bg-gray-200"
+          loading="eager"
+          fetchpriority="high"
+        />
+      </div>
+    </section>
+
+    <!-- PROBLEM Section -->
+    <section class="mb-12 prose prose-lg max-w-none" id="about">
+      <h2 class="text-2xl font-bold text-brand-dark">{problemTitle}</h2>
+      <Fragment set:html={problemText} />
+    </section>
+
+    <!-- AGITATION Section -->
+    <section class="mb-12 bg-gray-50 rounded-xl p-6 md:p-8">
+      <h2 class="text-2xl font-bold text-brand-dark mb-4">{agitationTitle}</h2>
+      <ul class="space-y-3">
+        {painPoints.map((point) => (
+          <li class="flex items-start gap-3">
+            <span class="text-brand-alert text-xl flex-shrink-0">&#10007;</span>
+            <span>{point}</span>
+          </li>
+        ))}
+      </ul>
+      <p class="mt-4 font-medium text-brand-dark">
+        J'ai cherché une vraie solution. Et je l'ai trouvée.
+      </p>
+    </section>
+
+    <!-- SOLUTION Section -->
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold text-brand-dark mb-6">{solutionTitle}</h2>
+      <p class="text-lg mb-6">{solutionText}</p>
+
+      <div class="bg-gradient-to-r from-brand-primary/10 to-brand-secondary/10 rounded-xl p-6 md:p-8 mb-8">
+        <h3 class="text-xl font-bold text-brand-dark mb-4">
+          Ce qui rend {productName} différent :
+        </h3>
+        <ul class="space-y-3">
+          {benefits.map((benefit) => (
+            <li class="flex items-start gap-3">
+              <span class="text-brand-primary text-xl flex-shrink-0">&#10003;</span>
+              <span><strong>{benefit.title}:</strong> {benefit.description}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="text-center my-8">
+        <CTAButton
+          text={ctaText}
+          href={affiliateLink}
+          size="large"
+          trackingId="solution-cta"
+        />
+        <p class="text-sm text-gray-500 mt-3">
+          Offre limitée - Livraison gratuite aujourd'hui
+        </p>
+      </div>
+    </section>
+
+    <!-- SOCIAL PROOF Section -->
+    <section class="mb-12" id="reviews">
+      <h2 class="text-2xl font-bold text-brand-dark mb-6 text-center">
+        Ce que les autres en disent
+      </h2>
+
+      <div class="grid md:grid-cols-2 gap-6 mb-8">
+        {testimonials.map((t) => (
+          <TestimonialCard
+            name={t.name}
+            rating={t.rating}
+            text={t.text}
+            verified={true}
+          />
+        ))}
+      </div>
+
+      <h3 class="text-xl font-bold text-brand-dark mb-4">
+        Comparatif {productName}
+      </h3>
+      <ComparisonTable
+        productName={productName}
+        items={comparisonItems}
+      />
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="bg-brand-dark text-white rounded-xl p-8 text-center mb-12">
+      <h2 class="text-2xl md:text-3xl font-bold mb-4">{finalCtaTitle}</h2>
+      <p class="text-lg mb-6 text-gray-200">{finalCtaText}</p>
+      <CTAButton
+        text={ctaText}
+        href={affiliateLink}
+        size="large"
+        trackingId="final-cta"
+      />
+      <p class="text-sm text-gray-400 mt-4">
+        Garantie satisfait ou remboursé 30 jours
+      </p>
+    </section>
+
+  </article>
+</BaseLayout>

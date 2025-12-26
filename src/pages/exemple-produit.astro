@@ -1,0 +1,69 @@
+---
+import ProductLayout from '../layouts/ProductLayout.astro';
+
+// Configuration du produit - Modifiez ces valeurs pour chaque produit
+const productConfig = {
+  // SEO
+  title: "Mon Avis sur [Produit] - Test Complet 2025 | The Stack Lab",
+  description: "Découvrez mon avis honnête sur [Produit] après 3 mois d'utilisation. Test complet, avantages, inconvénients et verdict final.",
+
+  // Hero
+  headline: "J'ai Enfin Trouvé la Solution à [Problème] Après Des Années de Recherche",
+  heroImage: "/images/product-hero.svg", // Remplacez par votre image
+
+  // Produit
+  productName: "Nom du Produit",
+  affiliateLink: "https://systeme.io/votre-lien-affiliation",
+
+  // PROBLEM (P)
+  problemTitle: "Mon Combat avec [Problème]...",
+  problemText: `
+    <p>Comme beaucoup d'entre vous, j'ai passé des années à lutter contre [problème].
+    Chaque matin, je me réveillais avec [symptôme/frustration].</p>
+    <p>J'ai essayé [solution 1], [solution 2], et même [solution 3].
+    Rien ne fonctionnait vraiment. Je commençais à perdre espoir.</p>
+  `,
+
+  // AGITATION (A)
+  agitationTitle: "Le Coût Caché de [Problème]",
+  painPoints: [
+    "Perte de temps et d'argent avec des solutions inefficaces",
+    "Impact sur ma vie quotidienne et mon bien-être",
+    "Frustration de ne pas trouver de vraie solution",
+    "Sentiment d'être seul(e) face à ce problème",
+  ],
+
+  // SOLUTION (S)
+  solutionTitle: "La Découverte Qui a Tout Changé",
+  solutionText: "Après des mois de recherches, j'ai découvert [Produit]. Au début, j'étais sceptique. Mais les résultats parlent d'eux-mêmes.",
+  benefits: [
+    { title: "Résultats rapides", description: "Visible dès les premières semaines d'utilisation" },
+    { title: "Facile à utiliser", description: "Pas besoin de compétences techniques" },
+    { title: "Support client", description: "Une équipe disponible 24/7 pour vous aider" },
+  ],
+
+  // Témoignages
+  testimonials: [
+    { name: "Marie L.", rating: 5, text: "Incroyable ! J'ai vu des résultats en seulement 2 semaines." },
+    { name: "Thomas R.", rating: 5, text: "Enfin quelque chose qui fonctionne. Je recommande à 100%." },
+    { name: "Sophie M.", rating: 4, text: "Très bon produit, le support client est top." },
+    { name: "Pierre D.", rating: 5, text: "J'aurais aimé découvrir ça plus tôt !" },
+  ],
+
+  // Comparatif
+  comparisonItems: [
+    { feature: "Résultats prouvés", product: true, competitors: false },
+    { feature: "Garantie remboursement", product: true, competitors: false },
+    { feature: "Support 24/7", product: true, competitors: "Limité" },
+    { feature: "Livraison gratuite", product: true, competitors: false },
+    { feature: "Ingrédients naturels", product: true, competitors: "50%" },
+  ],
+
+  // CTA
+  ctaText: "Essayer Maintenant",
+  finalCtaTitle: "Prêt(e) à Transformer Votre Vie ?",
+  finalCtaText: "Rejoignez des milliers de personnes qui ont déjà fait le premier pas.",
+};
+---
+
+<ProductLayout {...productConfig} />
