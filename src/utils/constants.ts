@@ -10,7 +10,7 @@ export const SITE_CONFIG = {
 
 // Affiliate URLs - centralized for easy updates
 export const AFFILIATE_LINKS = {
-  mainProduct: import.meta.env.SYSTEME_IO_LINK || 'https://systeme.io/funnel',
+  mainProduct: import.meta.env.SYSTEME_IO_LINK || 'https://systeme.io/?sa=sa02578596435c11239325f4ed38fa01ed82d1c870',
 };
 
 // Analytics (optional Plausible)
