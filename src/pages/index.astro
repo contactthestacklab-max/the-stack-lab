@@ -1,202 +1,192 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import AuthorByline from '../components/AuthorByline.astro';
-import CTAButton from '../components/CTAButton.astro';
-import TestimonialCard from '../components/TestimonialCard.astro';
-import ComparisonTable from '../components/ComparisonTable.astro';
 
-const comparisonData = [
-  { feature: 'Fast Results', product: true, competitors: false },
-  { feature: 'Money-Back Guarantee', product: true, competitors: false },
-  { feature: 'Natural Ingredients', product: true, competitors: '50%' },
-  { feature: 'Free Shipping', product: true, competitors: false },
-  { feature: 'Customer Support', product: '24/7', competitors: 'Limited' },
+const featuredReviews = [
+  {
+    title: "Systeme.io Review 2025",
+    description: "Is this all-in-one platform really worth it? We conducted a 30-day deep dive to find out.",
+    image: "/images/funnel.svg",
+    href: "/systeme-io-review",
+    tag: "Featured",
+    tagColor: "bg-brand-cta",
+  },
+];
+
+const upcomingReviews = [
+  "ClickFunnels 2.0 vs Systeme.io",
+  "Best Email Marketing Tools 2025",
+  "Top Landing Page Builders",
 ];
 ---
 
 <BaseLayout
-  title="I Finally Found the Secret to [Desired Outcome] | The Stack Lab"
-  description="Discover how this product helped me solve my biggest challenge. Real experience, honest review."
+  title="The Stack Lab | Independent Tech & Marketing Reviews"
+  description="We audit and review digital infrastructure tools to help US entrepreneurs scale without technical debt. Honest reviews, real results."
+  showStickyCTA={false}
 >
-  <article class="max-w-3xl mx-auto px-4 py-8" id="home">
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-br from-brand-dark to-brand-dark/95 text-white py-16 md:py-24">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <!-- Logo -->
+      <div class="flex justify-center mb-8">
+        <svg width="280" height="70" viewBox="0 0 250 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="5" y="35" width="30" height="10" rx="2" fill="#ffffff" opacity="0.8"/>
+          <rect x="5" y="22" width="30" height="10" rx="2" fill="#16B4F2"/>
+          <rect x="5" y="9" width="30" height="10" rx="2" fill="#F2913D"/>
+          <text x="45" y="32" font-family="Arial, sans-serif" font-weight="800" font-size="22" fill="#ffffff">THE STACK</text>
+          <text x="175" y="32" font-family="Arial, sans-serif" font-weight="800" font-size="22" fill="#F2913D">LAB</text>
+          <circle cx="38" cy="12" r="3" fill="#F2913D"/>
+        </svg>
+      </div>
 
-    <!-- Hero Section -->
-    <section class="mb-12">
-      <!-- H1 - Must match Pinterest Pin hook (Scent Match) -->
-      <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-brand-dark mb-6 leading-tight">
-        I Finally Found the Secret to [Desired Outcome] After Trying Everything
+      <h1 class="text-3xl md:text-5xl font-bold mb-6 leading-tight">
+        Stop Overpaying for Your<br/>
+        <span class="text-brand-primary">Marketing Tech Stack</span>
       </h1>
 
-      <AuthorByline />
+      <p class="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+        Independent reviews and audits of digital tools to help US entrepreneurs
+        scale without technical debt. No fluff. Just honest analysis.
+      </p>
 
-      <!-- Hero Image - WebP, optimized for LCP -->
-      <div class="my-8">
-        <img
-          src="/images/product-hero.svg"
-          alt="The solution I discovered"
-          width="800"
-          height="450"
-          class="w-full rounded-xl shadow-lg bg-gray-200"
-          loading="eager"
-          fetchpriority="high"
-        />
+      <a
+        href="#reviews"
+        class="inline-flex items-center gap-2 bg-brand-cta text-white font-semibold px-8 py-4 rounded-lg hover:bg-brand-cta/90 transition-all"
+      >
+        Browse Our Reviews
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- What We Do -->
+  <section class="py-16 bg-gray-50" id="about">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-2xl md:text-3xl font-bold text-brand-dark text-center mb-12">
+        Why Trust The Stack Lab?
+      </h2>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="text-center">
+          <div class="w-14 h-14 bg-brand-primary/10 rounded-xl flex items-center justify-center mx-auto mb-4">
+            <svg class="w-7 h-7 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path>
+            </svg>
+          </div>
+          <h3 class="font-semibold text-brand-dark mb-2">30-Day Deep Dives</h3>
+          <p class="text-gray-600 text-sm">We don't just skim the surface. Every tool gets a full month of real-world testing.</p>
+        </div>
+
+        <div class="text-center">
+          <div class="w-14 h-14 bg-brand-cta/10 rounded-xl flex items-center justify-center mx-auto mb-4">
+            <svg class="w-7 h-7 text-brand-cta" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <h3 class="font-semibold text-brand-dark mb-2">ROI Focused</h3>
+          <p class="text-gray-600 text-sm">We calculate the real cost of ownership, not just the sticker price.</p>
+        </div>
+
+        <div class="text-center">
+          <div class="w-14 h-14 bg-brand-secondary/10 rounded-xl flex items-center justify-center mx-auto mb-4">
+            <svg class="w-7 h-7 text-brand-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+            </svg>
+          </div>
+          <h3 class="font-semibold text-brand-dark mb-2">No Bias</h3>
+          <p class="text-gray-600 text-sm">We call out the cons just as loudly as the pros. Your success matters more than commissions.</p>
+        </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- PROBLEM Section (P in PAS) -->
-    <section class="mb-12 prose prose-lg max-w-none" id="about">
-      <h2 class="text-2xl font-bold text-brand-dark">
-        My Struggle with [Problem] Was Real...
+  <!-- Featured Reviews -->
+  <section class="py-16" id="reviews">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-2xl md:text-3xl font-bold text-brand-dark text-center mb-4">
+        Latest Reviews
       </h2>
-
-      <p>
-        Like many of you, I spent years dealing with [problem]. Every morning,
-        I would [describe pain point]. I tried [failed solution 1], [failed solution 2],
-        and even [failed solution 3]. Nothing seemed to work.
+      <p class="text-gray-600 text-center mb-12 max-w-xl mx-auto">
+        In-depth audits of the tools that can make or break your online business.
       </p>
 
-      <p>
-        My friends would give me advice that never helped. I felt frustrated,
-        overwhelmed, and honestly? A little hopeless. I was spending money on
-        products that promised the world but delivered nothing.
-      </p>
-    </section>
+      <!-- Featured Review Card -->
+      {featuredReviews.map((review) => (
+        <a
+          href={review.href}
+          class="block bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow overflow-hidden border border-gray-100 mb-8"
+        >
+          <div class="md:flex">
+            <div class="md:w-2/5">
+              <img
+                src={review.image}
+                alt={review.title}
+                class="w-full h-48 md:h-full object-cover bg-brand-dark"
+              />
+            </div>
+            <div class="p-6 md:p-8 md:w-3/5 flex flex-col justify-center">
+              <span class={`inline-block ${review.tagColor} text-white text-xs font-semibold px-3 py-1 rounded-full w-fit mb-4`}>
+                {review.tag}
+              </span>
+              <h3 class="text-xl md:text-2xl font-bold text-brand-dark mb-3">
+                {review.title}
+              </h3>
+              <p class="text-gray-600 mb-4">
+                {review.description}
+              </p>
+              <span class="text-brand-primary font-semibold inline-flex items-center gap-2">
+                Read Full Review
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                </svg>
+              </span>
+            </div>
+          </div>
+        </a>
+      ))}
 
-    <!-- AGITATION Section (A in PAS) -->
-    <section class="mb-12 bg-gray-50 rounded-xl p-6 md:p-8">
-      <h2 class="text-2xl font-bold text-brand-dark mb-4">
-        The Hidden Cost of [Problem]
-      </h2>
-
-      <p class="text-lg mb-4">
-        Here's what nobody tells you about living with [problem]:
-      </p>
-
-      <ul class="space-y-3">
-        <li class="flex items-start gap-3">
-          <span class="text-brand-alert text-xl flex-shrink-0">&#10007;</span>
-          <span>[Pain point 1 - emotional or financial impact]</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="text-brand-alert text-xl flex-shrink-0">&#10007;</span>
-          <span>[Pain point 2 - social or relationship impact]</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="text-brand-alert text-xl flex-shrink-0">&#10007;</span>
-          <span>[Pain point 3 - health or time impact]</span>
-        </li>
-      </ul>
-
-      <p class="mt-4 font-medium text-brand-dark">
-        I knew I needed to find a real solution. That's when everything changed.
-      </p>
-    </section>
-
-    <!-- SOLUTION Section (S in PAS) -->
-    <section class="mb-12">
-      <h2 class="text-2xl font-bold text-brand-dark mb-6">
-        The Discovery That Changed Everything
-      </h2>
-
-      <p class="text-lg mb-6">
-        After months of research, I stumbled upon [Product Name]. At first,
-        I was skeptical (I'd been burned before). But the reviews were different.
-        Real people sharing real results.
-      </p>
-
-      <div class="bg-gradient-to-r from-brand-primary/10 to-brand-secondary/10 rounded-xl p-6 md:p-8 mb-8">
-        <h3 class="text-xl font-bold text-brand-dark mb-4">
-          What Makes [Product] Different:
+      <!-- Coming Soon -->
+      <div class="bg-gray-50 rounded-xl p-6 md:p-8">
+        <h3 class="font-semibold text-brand-dark mb-4 flex items-center gap-2">
+          <svg class="w-5 h-5 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
+          Coming Soon
         </h3>
-        <ul class="space-y-3">
-          <li class="flex items-start gap-3">
-            <span class="text-brand-primary text-xl flex-shrink-0">&#10003;</span>
-            <span><strong>[Benefit 1]:</strong> [Explanation of benefit]</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <span class="text-brand-primary text-xl flex-shrink-0">&#10003;</span>
-            <span><strong>[Benefit 2]:</strong> [Explanation of benefit]</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <span class="text-brand-primary text-xl flex-shrink-0">&#10003;</span>
-            <span><strong>[Benefit 3]:</strong> [Explanation of benefit]</span>
-          </li>
+        <ul class="space-y-2">
+          {upcomingReviews.map((review) => (
+            <li class="flex items-center gap-3 text-gray-600">
+              <span class="w-2 h-2 bg-brand-secondary rounded-full"></span>
+              {review}
+            </li>
+          ))}
         </ul>
       </div>
+    </div>
+  </section>
 
-      <!-- Primary CTA -->
-      <div class="text-center my-8">
-        <CTAButton
-          text="See If [Product] Is Right For You"
-          size="large"
-          trackingId="solution-section-cta"
-        />
-        <p class="text-sm text-gray-500 mt-3">
-          Limited time offer - Free shipping on orders today
-        </p>
-      </div>
-    </section>
-
-    <!-- SOCIAL PROOF Section -->
-    <section class="mb-12" id="reviews">
-      <h2 class="text-2xl font-bold text-brand-dark mb-6 text-center">
-        What Others Are Saying
-      </h2>
-
-      <div class="grid md:grid-cols-2 gap-6 mb-8">
-        <TestimonialCard
-          name="Sarah M."
-          rating={5}
-          text="I was skeptical at first, but after 2 weeks I noticed a real difference. This actually works!"
-          verified={true}
-        />
-        <TestimonialCard
-          name="Michael R."
-          rating={5}
-          text="Finally something that delivers on its promises. I've already recommended it to my friends."
-          verified={true}
-        />
-        <TestimonialCard
-          name="Jennifer K."
-          rating={4}
-          text="Great product! The results took about 3 weeks for me, but definitely worth the wait."
-          verified={true}
-        />
-        <TestimonialCard
-          name="David L."
-          rating={5}
-          text="Customer service was amazing when I had questions. The product exceeded my expectations."
-          verified={true}
-        />
-      </div>
-
-      <!-- Comparison Table -->
-      <h3 class="text-xl font-bold text-brand-dark mb-4">
-        How [Product] Compares
-      </h3>
-      <ComparisonTable
-        productName="[Product Name]"
-        items={comparisonData}
-      />
-    </section>
-
-    <!-- Final CTA Section -->
-    <section class="bg-brand-dark text-white rounded-xl p-8 text-center mb-12">
+  <!-- CTA Section -->
+  <section class="py-16 bg-brand-dark text-white" id="contact">
+    <div class="max-w-4xl mx-auto px-4 text-center">
       <h2 class="text-2xl md:text-3xl font-bold mb-4">
-        Ready to [Achieve Desired Outcome]?
+        Ready to Simplify Your Stack?
       </h2>
-      <p class="text-lg mb-6 text-gray-200">
-        Join thousands of others who have already transformed their [area of life].
+      <p class="text-gray-300 mb-8 max-w-xl mx-auto">
+        Start with our most popular review and discover why 300,000+ entrepreneurs
+        have made the switch.
       </p>
-      <CTAButton
-        text="Get Started Today"
-        size="large"
-        trackingId="final-cta"
-      />
-      <p class="text-sm text-gray-400 mt-4">
-        30-day money-back guarantee - No questions asked
-      </p>
-    </section>
+      <a
+        href="/systeme-io-review"
+        class="inline-flex items-center gap-2 bg-brand-cta text-white font-semibold px-8 py-4 rounded-lg hover:bg-brand-cta/90 transition-all"
+      >
+        Read Systeme.io Review
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+        </svg>
+      </a>
+    </div>
+  </section>
 
-  </article>
 </BaseLayout>
