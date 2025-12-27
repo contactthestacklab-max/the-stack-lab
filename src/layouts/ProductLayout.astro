@@ -65,7 +65,7 @@ const {
   benefits,
   testimonials,
   comparisonItems,
-  ctaText = 'Découvrir Maintenant',
+  ctaText = 'Get Started Now',
   finalCtaTitle,
   finalCtaText,
 } = Astro.props;
@@ -113,7 +113,7 @@ const {
         ))}
       </ul>
       <p class="mt-4 font-medium text-brand-dark">
-        J'ai cherché une vraie solution. Et je l'ai trouvée.
+        I searched for a real solution. And I found it.
       </p>
     </section>
 
@@ -124,7 +124,7 @@ const {
 
       <div class="bg-gradient-to-r from-brand-primary/10 to-brand-secondary/10 rounded-xl p-6 md:p-8 mb-8">
         <h3 class="text-xl font-bold text-brand-dark mb-4">
-          Ce qui rend {productName} différent :
+          What Makes {productName} Different:
         </h3>
         <ul class="space-y-3">
           {benefits.map((benefit) => (
@@ -144,7 +144,7 @@ const {
           trackingId="solution-cta"
         />
         <p class="text-sm text-gray-500 mt-3">
-          Offre limitée - Livraison gratuite aujourd'hui
+          Limited time offer - Free shipping today
         </p>
       </div>
     </section>
@@ -152,7 +152,7 @@ const {
     <!-- SOCIAL PROOF Section -->
     <section class="mb-12" id="reviews">
       <h2 class="text-2xl font-bold text-brand-dark mb-6 text-center">
-        Ce que les autres en disent
+        What Others Are Saying
       </h2>
 
       <div class="grid md:grid-cols-2 gap-6 mb-8">
@@ -167,7 +167,7 @@ const {
       </div>
 
       <h3 class="text-xl font-bold text-brand-dark mb-4">
-        Comparatif {productName}
+        {productName} Comparison
       </h3>
       <ComparisonTable
         productName={productName}
@@ -186,7 +186,7 @@ const {
         trackingId="final-cta"
       />
       <p class="text-sm text-gray-400 mt-4">
-        Garantie satisfait ou remboursé 30 jours
+        30-day money-back guarantee - No questions asked
       </p>
     </section>
 
