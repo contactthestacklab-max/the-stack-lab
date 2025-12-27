@@ -1,0 +1,71 @@
+---
+import ProductLayout from '../layouts/ProductLayout.astro';
+
+const productConfig = {
+  // SEO
+  title: "The $297/mo Funnel Lie? My 2025 Systeme.io Honest Review | The Stack Lab",
+  description: "Tired of the 'Frankenstein' tech stack? Matt from The Stack Lab audits Systeme.io to see if it truly delivers high-converting funnels for a fraction of the cost.",
+
+  // Hero
+  headline: "I Finally Found a Way to Launch Profitable Sales Funnels Without the $297/mo Price Tag",
+  heroImage: "/images/systeme-io-hero.svg",
+
+  // Product
+  productName: "Systeme.io",
+  affiliateLink: "https://systeme.io/?sa=sa0013546545958a5379a55af496a9d68d9d1eb1ba",
+
+  // PROBLEM (P)
+  problemTitle: "The 'Technical Debt' Bottleneck: Why Most Digital Ventures Fail",
+  problemText: `
+    <p>At The Stack Lab, we've audited hundreds of digital infrastructures. The pattern is always the same: entrepreneurs convinced that professional authority requires a "Frankenstein" tech stack. You know the drill—a $97/mo email tool, a $149/mo funnel builder, and a $50/mo checkout system that barely talks to the rest. Every morning started with checking if the APIs were still holding up, rather than focusing on growth.</p>
+
+    <p>We analyzed the industry giants. We spent a fortune on the big names everyone sees in YouTube ads, hoping that a higher price tag meant a smoother experience. Instead, we inherited a steep learning curve and a monthly overhead that suffocated our early-stage margins. The tools weren't working for us; we were working for the tools.</p>
+
+    <p>The result? "Tech-paralysis." We felt discouraged, watching our competitors scale while we were stuck in the back-office, fixing broken automations. It was a constant drain on both our budget and our creative energy, leading us to believe that high-tier marketing was a luxury reserved for those with massive budgets.</p>
+  `,
+
+  // AGITATION (A)
+  agitationTitle: "The Invisible Drain on Your Scalability",
+  painPoints: [
+    "Fragmented Data: Never seeing your true conversion rates because your stats are scattered across 4 platforms",
+    "The Profit Leak: Paying for thousands of features you never use just to access basic automation",
+    "The Learning Curve Wall: Wasting weeks mastering complex software instead of closing sales",
+    "Integration Failures: Losing leads because your landing page failed to trigger your email sequence",
+    "High Entry Barriers: Feeling priced out of the market before earning your first dollar",
+  ],
+
+  // SOLUTION (S)
+  solutionTitle: "The Discovery That Restored Our Focus: All-in-One Simplicity",
+  solutionText: "Our editorial team conducted a 30-day deep dive into Systeme.io. What we found was a streamlined, intuitive powerhouse that fundamentally changes the ROI of digital business.",
+  benefits: [
+    { title: "Zero-Friction Integration", description: "Landing pages, emails, and payments under one roof" },
+    { title: "Built for 2025 Speed", description: "Engineered for Web Vitals to ensure zero bounce rates from Pinterest" },
+    { title: "Elite 24/7 Human Support", description: "Real experts, not just bots, monitoring your performance step-by-step" },
+    { title: "Unrivaled Value", description: "Start for free and scale with premium features at a fraction of the 'standard' cost" },
+  ],
+
+  // Testimonials
+  testimonials: [
+    { name: "Cyril V.", rating: 5, text: "Systeme.io is a gem... arguably the best platform to launch. Everything is designed for peace of mind. It's an all-in-one system with an incredible 24/7 human support team." },
+    { name: "Anne-Laure M.", rating: 5, text: "Incredibly reactive team! They proactively monitor accounts for irregularities that could hurt performance. Step-by-step guidance that every app should have." },
+    { name: "Liloo B.", rating: 5, text: "As a brand-new member, I already have a professional sales funnel and automated email sequence ready. Fluid, intuitive, and extraordinary support." },
+    { name: "Frederique C.", rating: 5, text: "I migrated everything to Systeme.io. It handles funnels, courses, and webinars in one place for a very reasonable price. Simpler and more efficient than anything else." },
+  ],
+
+  // Comparison
+  comparisonItems: [
+    { feature: "All-in-One Integration", product: "Native", competitors: "Requires 3rd party apps" },
+    { feature: "Support Response Time", product: "< 2 Hours", competitors: "24-48 Hours" },
+    { feature: "Page Speed Score", product: "98/100", competitors: "70/100" },
+    { feature: "Pro Automation", product: true, competitors: "High-tier only" },
+    { feature: "Starting Cost", product: "$0 (Free Forever)", competitors: "$97 - $297/mo" },
+  ],
+
+  // CTA
+  ctaText: "Start Building Your Funnel for Free",
+  finalCtaTitle: "Ready to Simplify Your Success?",
+  finalCtaText: "Join over 300,000 entrepreneurs who have ditched the complexity for a streamlined, profitable business model.",
+};
+---
+
+<ProductLayout {...productConfig} />

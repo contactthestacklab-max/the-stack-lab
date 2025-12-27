@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450">
+  <!-- Background -->
+  <rect width="800" height="450" fill="#092326"/>
+
+  <!-- Dashboard mockup -->
+  <rect x="50" y="40" width="700" height="370" rx="12" fill="#ffffff" opacity="0.05"/>
+
+  <!-- Sidebar -->
+  <rect x="50" y="40" width="160" height="370" rx="12" fill="#16B4F2" opacity="0.2"/>
+  <rect x="70" y="70" width="120" height="12" rx="4" fill="#16B4F2" opacity="0.5"/>
+  <rect x="70" y="100" width="100" height="8" rx="4" fill="#ffffff" opacity="0.3"/>
+  <rect x="70" y="120" width="80" height="8" rx="4" fill="#ffffff" opacity="0.3"/>
+  <rect x="70" y="140" width="90" height="8" rx="4" fill="#ffffff" opacity="0.3"/>
+  <rect x="70" y="160" width="70" height="8" rx="4" fill="#ffffff" opacity="0.3"/>
+
+  <!-- Main content area -->
+  <!-- Funnel visualization -->
+  <polygon points="400,80 550,80 520,180 430,180" fill="#F2913D" opacity="0.8"/>
+  <polygon points="430,190 520,190 500,280 450,280" fill="#16B4F2" opacity="0.8"/>
+  <polygon points="450,290 500,290 485,360 465,360" fill="#2ECEF2" opacity="0.8"/>
+
+  <!-- Stats cards -->
+  <rect x="580" y="80" width="150" height="70" rx="8" fill="#ffffff" opacity="0.1"/>
+  <text x="600" y="110" font-family="Arial, sans-serif" font-size="12" fill="#16B4F2">Visitors</text>
+  <text x="600" y="135" font-family="Arial, sans-serif" font-size="24" fill="#ffffff" font-weight="bold">12,847</text>
+
+  <rect x="580" y="165" width="150" height="70" rx="8" fill="#ffffff" opacity="0.1"/>
+  <text x="600" y="195" font-family="Arial, sans-serif" font-size="12" fill="#F2913D">Conversions</text>
+  <text x="600" y="220" font-family="Arial, sans-serif" font-size="24" fill="#ffffff" font-weight="bold">2,341</text>
+
+  <rect x="580" y="250" width="150" height="70" rx="8" fill="#ffffff" opacity="0.1"/>
+  <text x="600" y="280" font-family="Arial, sans-serif" font-size="12" fill="#2ECEF2">Revenue</text>
+  <text x="600" y="305" font-family="Arial, sans-serif" font-size="24" fill="#ffffff" font-weight="bold">$48.2K</text>
+
+  <!-- Funnel labels -->
+  <text x="475" y="140" font-family="Arial, sans-serif" font-size="14" fill="#ffffff" text-anchor="middle" font-weight="bold">Landing Page</text>
+  <text x="475" y="240" font-family="Arial, sans-serif" font-size="14" fill="#ffffff" text-anchor="middle" font-weight="bold">Email Sequence</text>
+  <text x="475" y="330" font-family="Arial, sans-serif" font-size="14" fill="#ffffff" text-anchor="middle" font-weight="bold">Sales</text>
+
+  <!-- Bottom text -->
+  <text x="400" y="420" font-family="Arial, sans-serif" font-size="16" fill="#16B4F2" text-anchor="middle" font-weight="600">All-in-One Funnel Builder</text>
+</svg>

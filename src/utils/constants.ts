@@ -1,8 +1,8 @@
 export const SITE_CONFIG = {
   title: 'The Stack Lab',
-  description: 'Discover trusted product reviews and recommendations from real experience.',
+  description: 'Independent Tech & Marketing Editorial Team. We audit and review digital infrastructure tools to help US entrepreneurs scale without technical debt.',
   author: {
-    name: 'Sarah Mitchell',
+    name: 'Matt, Editorial Lead',
     photo: '/images/author-photo.svg',
   },
   lastUpdated: 'December 2025',
