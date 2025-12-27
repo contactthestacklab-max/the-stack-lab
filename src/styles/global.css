@@ -10,8 +10,8 @@
   --color-brand-cta: #F2913D;
   --color-brand-alert: #F25757;
 
-  /* Typography */
-  --font-family-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  /* Typography - System fonts first for fast render, Inter loads async */
+  --font-family-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', sans-serif;
 }
 
 /* Base styles */
